@@ -1,0 +1,74 @@
+### Requerimineto del Proyecto
+El proyecto conciste en la agrupación de cuentas de una MongoDB, cada cuenta contiene diferentes tipos
+de operaciones en distintas fechas, el objetivo es analizar las cuentas y listar por cada cuenta
+los distintios tipos de operaciones. Ademas existen dos colecciones más de MongoDB, amabas contienen
+grupos por las que se estan agrupando las distintas cuentas de acuerdo a sus coleccion, es decir,
+en primera se agrupa las cuentas de acuerdo a sus tipos de operación, si una cuenta tiene 5 tipos de
+operacion el programa busca en la coleccion de segmentos a que segmentos tiene esa cuenta y agrega un
+campo que indica los segmetos que tiene y otro campo que indica que operaciones no coinciden con algun
+segemto de la coleccion.
+Una vez que se tienen estos campos se realiza un segundo analisis con otra coleccion de la mongoDB,
+donde se los segmentos anteriormente creados en las grupos.
+Tambien se 
+
+Esta agrupación se guarda en una base de datos sql.
+Existe otra colección mongo
+
+### Procesos en `__main__`
+
+1. **`inserta_cts_tomongo`**
+   Inserta las CTS que no existen en la base de datos (en caso de que la base de datos Mongo se actualice).
+
+2. **`crea_campo_bd`**
+   Crea un campo nuevo en la base de datos y agrega el contenido indicado.
+
+3. **`exporta_sql`**
+   Exporta la tabla de la base de datos a un archivo en formato XLSX.
+
+4. **`compara_archivo_xlsxbd`**
+   Compara el archivo XLSX con la base de datos para agregar los campos de la base de datos al archivo XLSX y entregar el reporte.
+
+5. **`actualiza_grupos`**
+   Compara el archivo XLSX y la base de datos para actualizar los grupos en caso de que haya cambios en ellos.
+
+6. **`actualiza_segmentos`**
+   Actualiza los segmentos en el campo `segmento` de la base de datos, si los segmentos se actualizan en MongoDB (colección `segmentos`).
+
+7. **`actualiza_segmentaciones`**
+   Actualiza los campos `segmentos`, `operacionesOtroSegmento`, `Grupo_1`, `Grupo_2`, `Grupo_3` en la base de datos, si los segmentos se actualizan en MongoDB.
+   Se actualizan los tres campos porque dependen uno del otro.
+
+### Procesos en `inserciones.py`
+
+- Se realiza un conteo inicial de los registros en la base de datos antes de comenzar con la inserción.
+- Inicializa un contador en 0 para registrar el total de inserciones.
+
+
+¿ Que hacer cuando se actualiza la mongo?
+
+1.- Se debe cargar el archivo a la mongo
+2.- Se insertan las cuentas que no existen en la BD pero en la Mongo si
+3.- Comparar la Mongo con la BD para comparar si los tipos de operaciones son los mismo o si han tenido algua
+    nueva operacion
+4.- Si los tipos de operaciones cambiaron, se deben actualizar los campos tipos_de_operacion, segmento,
+    operacionesOtroSegmento, Grupo_1, Grupo_2, Grupo_3
+
+
+
+#### PASOS DE INSTALACIONES DE PAQUETERIAS
+pip install sqlalchemy
+pip install colorlog
+pip install concurrent_log_handler
+pip install pymongo
+pip install pandas
+pip install
+pip install
+pip install
+pip install
+
+
+
+
+
+
+

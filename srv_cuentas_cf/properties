@@ -1,0 +1,23 @@
+[SQL]
+server =
+database =
+table.name =
+
+[Mongo]
+cliente =
+port =
+db.name =
+
+[Mongo_Colecctions]
+coleccion.cuentas =
+coleccion.segmentos =
+coleccion.agrupacion =
+coleccion.segmentacion =
+
+[Rutas]
+archivos.xlsx =
+archivos.xlsx.mongo =
+archivos.xlsx.sql =
+archivos.xlsx.merge =
+archivos.descarga =
+path.log =
